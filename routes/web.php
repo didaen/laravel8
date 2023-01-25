@@ -18,7 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "name" => "Dida EN",
+        "email" => "den.elfsuju@gmail.com",
+        "image" => "didaen.jpg"
+    ]);
 });
 
 Route::get('/blog', function () {
