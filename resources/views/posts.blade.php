@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1>Judul</h1>
-    <h5>Dida EN</h5>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint libero nobis expedita, deserunt cumque nostrum. Quod repellendus eius iure ipsum.</p>
+    @foreach ($posts as $post)
+        <h2>{{ $post["title"] }}</h2>
+        <h5>Oleh : {{ $post["author"] }}</h5>
+        <p>{{ $post["body"] }}</p>
+    @endforeach
 @endsection
