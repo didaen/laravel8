@@ -48,3 +48,8 @@ Route::get('/blog', function () {
         "posts" => $blog_posts
     ]);
 });
+
+// HALAMAN SINGLE POST
+Route::get('/posts/{slug}', function ($slug) {
+    return view('post');
+});
