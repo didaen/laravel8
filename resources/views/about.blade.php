@@ -11,6 +11,6 @@
     <h1>Halaman About</h1>
     <h3>Dida EN</h3>
     <h3>allrised@gmail.com</h3>
-    <img src="" alt="">
+    <img src="img/didaen.jpg" alt="Dida EN" width="200">
 </body>
 </html>
