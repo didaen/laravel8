@@ -51,5 +51,7 @@ Route::get('/blog', function () {
 
 // HALAMAN SINGLE POST
 Route::get('/posts/{slug}', function ($slug) {
-    return view('post');
+    return view('post', [
+        "title" => "Single Post"
+    ]);
 });
