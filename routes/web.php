@@ -29,7 +29,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/blog', function () {
-    $blog_post = [
+    $blog_posts = [
         [
             "title" => "Judul Post Pertama",
             "author" => "Dida EN",
@@ -43,6 +43,6 @@ Route::get('/blog', function () {
     ];
     return view('posts', [
         "title" => "Blog",
-        "posts" => $blog_post
+        "posts" => $blog_posts
     ]);
 });
