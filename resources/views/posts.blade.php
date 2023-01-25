@@ -3,7 +3,9 @@
 @section('container')
     @foreach ($posts as $post)
         <article class="mb-5">
-            <a href="/blog/{{ $slug }}"><h2>{{ $post["title"] }}</h2></a>
+            <h2>
+                <a href="/posts/{{ $slug }}">{{ $post["title"] }}</a>
+            </h2>
             <h5>Oleh : {{ $post["author"] }}</h5>
             <p>{{ $post["body"] }}</p>
         </article>
