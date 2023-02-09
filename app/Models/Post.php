@@ -33,7 +33,7 @@ class Post
 
         $post = [];
 
-        foreach ($post as $p) {
+        foreach ($posts as $p) {
             if ($post["slug"] === $slug) {
                 $post = $p;
             }
