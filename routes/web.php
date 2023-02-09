@@ -30,10 +30,7 @@ Route::get('/about', function () {
 
 Route::get('/blog', function () {
     
-    return view('posts', [
-        "title" => "Blog",
-        "posts" => Post::all()
-    ]);
+    
 });
 
 // HALAMAN SINGLE POST
