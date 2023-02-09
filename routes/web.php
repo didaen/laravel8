@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +30,8 @@ Route::get('/about', function () {
 Route::get('/blog', function () {
     
     return view('posts', [
-        "title" => "Blog"
+        "title" => "Blog",
+        "posts" => Post::all()
     ]);
 });
 
