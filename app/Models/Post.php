@@ -31,15 +31,15 @@ class Post
     {
         $posts = static::all();
 
-        $post = [];
+        // $post = [];
 
-        foreach ($posts as $p) {
-            if ($p["slug"] === $slug) {
-                $post = $p;
-            }
-        }
+        // foreach ($posts as $p) {
+        //     if ($p["slug"] === $slug) {
+        //         $post = $p;
+        //     }
+        // }
 
-        return $post;
+        return $posts->firstWhere('slug', $slug);
 
     }
 }
