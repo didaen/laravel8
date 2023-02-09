@@ -14,4 +14,9 @@ class PostController extends Controller
             "posts" => Post::all()
         ]);
     }
+
+    public function show()
+    {
+        
+    }
 }
