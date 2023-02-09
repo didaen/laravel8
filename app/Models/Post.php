@@ -38,5 +38,8 @@ class Post
                 $post = $p;
             }
         }
+
+        return $post;
+
     }
 }
