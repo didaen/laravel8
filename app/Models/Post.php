@@ -31,11 +31,11 @@ class Post
     {
         $posts = self::$blog_posts;
 
-        $new_post = [];
+        $post = [];
 
-        foreach ($posts as $post) {
+        foreach ($post as $p) {
             if ($post["slug"] === $slug) {
-                $new_post = $post;
+                $post = $p;
             }
         }
     }
