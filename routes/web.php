@@ -39,16 +39,16 @@ Route::get('/blog', function () {
 // HALAMAN SINGLE POST
 Route::get('/posts/{slug}', function ($slug) {
 
-    $new_post = [];
+    // $new_post = [];
 
-    foreach ($blog_posts as $post) {
-        if ($post["slug"] === $slug) {
-            $new_post = $post;
-        }
-    }
+    // foreach ($blog_posts as $post) {
+    //     if ($post["slug"] === $slug) {
+    //         $new_post = $post;
+    //     }
+    // }
 
     return view('post', [
         "title" => "Single Post",
-        "post" => $new_post
+        "post" => Post::find($slug)
     ]);
 });
