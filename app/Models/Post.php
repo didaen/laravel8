@@ -20,8 +20,17 @@ class Post
         ]
     ];
 
+    
     public static function all()
     {
         return self::$blog_posts;
+    }
+
+
+    public static function find($slug)
+    {
+        $posts = self::$blog_posts;
+
+        
     }
 }
