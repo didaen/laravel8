@@ -29,7 +29,7 @@ class Post
 
     public static function find($slug)
     {
-        $posts = self::$blog_posts;
+        $posts = static::all();
 
         $post = [];
 
