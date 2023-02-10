@@ -5,7 +5,7 @@
         <h2>{{ $post->title }}</h2>
         <h5>Oleh : {{ $post->author }}</h5>
         
-        {{ $post->body }}
+        {!! $post->body !!}
         
     </article>
 
