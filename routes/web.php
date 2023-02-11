@@ -32,4 +32,4 @@ Route::get('/about', function () {
 Route::get('/blog', [PostController::class, 'index']);
 
 // HALAMAN SINGLE POST
-Route::get('/posts/{slug}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
