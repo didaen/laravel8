@@ -11,4 +11,17 @@ class Post extends Model
 
     // protected $fillable = ['title', 'author', 'excerpt', 'body'];
     protected $guarded = ['id'];
+
+    // Menghubungkan dengan Model Category
+    // Nama methodnya harus sama dengan nama modelnya
+    public function category ()
+    {
+        // Dengan ini model Post sudah berelasi
+        // dengan model Category
+        return $this->belongsTo(Category::class);
+
+        // Untuk pengecekan menggunakan Tinker
+        // $post = Post::first()
+        // $post->category
+    }
 }
