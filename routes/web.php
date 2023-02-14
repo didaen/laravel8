@@ -37,6 +37,14 @@ Route::get('/blog', [PostController::class, 'index']);
 // HALAMAN SINGLE POST
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
+// Route untuk menangani route /categories/
+Route::get('/categories', function (Category $category) {
+    return view('categories', [
+        'title' => 'Post Categories',
+        'categories' => Category::all()
+    ]);
+});
+
 // Route Model Binding untuk Category dan Post
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [
@@ -45,3 +53,5 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         'category' => $category->name
     ]);
 });
+
+
