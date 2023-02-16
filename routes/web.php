@@ -3,8 +3,8 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
 use App\Models\Category;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,12 +32,12 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/blog', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index']);
 
 // HALAMAN SINGLE POST
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
-// Route untuk menangani route /categories/
+// Route untuk menangani route /categories
 Route::get('/categories', function (Category $category) {
     return view('categories', [
         'title' => 'Post Categories',
@@ -51,6 +51,15 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name
+    ]);
+});
+
+// Route Model Binding untuk User dan Post
+Route::get('/user-{user:id}', function (User $user) {
+    return view('user', [
+        'title' => $user->name,
+        'posts' => $user->posts,
+        'user' => $user->name
     ]);
 });
 
