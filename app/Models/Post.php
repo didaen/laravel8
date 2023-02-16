@@ -24,4 +24,9 @@ class Post extends Model
         // $post = Post::first()
         // $post->category
     }
+
+    public function user ()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
