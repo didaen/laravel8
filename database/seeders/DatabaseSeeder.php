@@ -50,6 +50,9 @@ class DatabaseSeeder extends Seeder
             'slug' => 'personal'
         ]);
 
+        // Membuat inisiasi untuk PostFactory
+        Post::factory(20)->create();
+
         // Post::create([
         //     'title' => 'Judul Pertama',
         //     'category_id' => 1,
