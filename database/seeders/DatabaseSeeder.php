@@ -30,28 +30,28 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('123456')
         // ]);
 
-        Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming'
-        ]);
+        // Category::create([
+        //     'name' => 'Web Programming',
+        //     'slug' => 'web-programming'
+        // ]);
 
-        Category::create([
-            'name' => 'Graphic Design',
-            'slug' => 'graphic-design'
-        ]);
+        // Category::create([
+        //     'name' => 'Graphic Design',
+        //     'slug' => 'graphic-design'
+        // ]);
 
-        Category::create([
-            'name' => 'Physics',
-            'slug' => 'physics'
-        ]);
+        // Category::create([
+        //     'name' => 'Physics',
+        //     'slug' => 'physics'
+        // ]);
 
-        Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
-        ]);
+        // Category::create([
+        //     'name' => 'Personal',
+        //     'slug' => 'personal'
+        // ]);
 
         // Membuat inisiasi untuk PostFactory
-        Post::factory(20)->create();
+        Post::factory(5)->create();
 
         // Post::create([
         //     'title' => 'Judul Pertama',
