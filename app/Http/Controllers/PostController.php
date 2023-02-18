@@ -11,7 +11,11 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => "Blog",
-            "posts" => Post::all()
+            // "posts" => Post::all()
+
+            // Membuat data yang ditampilkan berdasarkan tanggal pembuatan
+            // Yang paling terkini ditampilkan paling atas
+            "posts" => Post::latest()->get()
         ]);
     }
 
