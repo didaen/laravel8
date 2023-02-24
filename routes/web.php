@@ -55,7 +55,7 @@ Route::get('/categories/{category:slug}', function (Category $category) {
 });
 
 // Route Model Binding untuk User dan Post
-Route::get('/user-{user:id}', function (User $user) {
+Route::get('/users/{user:username}', function (User $user) {
     return view('user', [
         'title' => $user->name,
         'posts' => $user->posts,
