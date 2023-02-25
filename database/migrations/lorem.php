@@ -1,0 +1,9 @@
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, minus? Ipsum, eius! Voluptatum molestiae dolorum qui laborum veritatis architecto, perferendis cupiditate voluptates, veniam iure vitae eum blanditiis possimus neque quaerat, rem molestias debitis exercitationem maxime. </p><p>Omnis, non quia eum vitae minima nostrum dolorem, quasi cupiditate saepe adipisci cumque nesciunt incidunt reiciendis expedita necessitatibus doloribus qui magnam fugit iste enim! Nesciunt, reprehenderit aliquam dolore, totam harum architecto in recusandae numquam atque maxime doloremque culpa perferendis laudantium eligendi repudiandae sed assumenda explicabo voluptatum aliquid asperiores itaque omnis blanditiis. Illum dolor impedit iure praesentium, distinctio at dolorem debitis consectetur! Culpa, sapiente ea. Maiores.</p>
+
+Post::create([
+    'category_id' => '1',
+    'title' => 'judul-pertama'
+    'slug' => 'fisika'
+    'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, minus? Ipsum, eius! Voluptatum molestiae dolorum qui'
+    'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, minus? Ipsum, eius! Voluptatum molestiae dolorum qui laborum veritatis architecto, perferendis cupiditate voluptates, veniam iure vitae eum blanditiis possimus neque quaerat, rem molestias debitis exercitationem maxime. </p><p>Omnis, non quia eum vitae minima nostrum dolorem, quasi cupiditate saepe adipisci cumque nesciunt incidunt reiciendis expedita necessitatibus doloribus qui magnam fugit iste enim! Nesciunt, reprehenderit aliquam dolore, totam harum architecto in recusandae numquam atque maxime doloremque culpa perferendis laudantium eligendi repudiandae sed assumenda explicabo voluptatum aliquid asperiores itaque omnis blanditiis. Illum dolor impedit iure praesentium, distinctio at dolorem debitis consectetur! Culpa, sapiente ea. Maiores.</p>'
+])
