@@ -55,11 +55,11 @@ Route::get('/categories/{category:slug}', function (Category $category) {
 });
 
 // Route Model Binding untuk User dan Post
-Route::get('/users/{user:username}', function (User $user) {
-    return view('user', [
-        'title' => $user->name,
-        'posts' => $user->posts,
-        'user' => $user->name
+Route::get('/authors/{author:username}', function (User $author) {
+    return view('author', [
+        'title' => $author->name,
+        'posts' => $author->posts,
+        'author' => $author->name
     ]);
 });
 
