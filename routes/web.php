@@ -47,19 +47,17 @@ Route::get('/categories', function (Category $category) {
 
 // Route Model Binding untuk Category dan Post
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name
+    return view('posts', [
+        'title' => 'Post Category : ' . $category->name,
+        'posts' => $category->posts
     ]);
 });
 
 // Route Model Binding untuk User dan Post
 Route::get('/authors/{author:username}', function (User $author) {
-    return view('author', [
-        'title' => $author->name,
-        'posts' => $author->posts,
-        'author' => $author->name
+    return view('posts', [
+        'title' => 'Post by ' . $author->name,
+        'posts' => $author->posts
     ]);
 });
 
