@@ -12,6 +12,10 @@ class Post extends Model
     // protected $fillable = ['title', 'author', 'excerpt', 'body'];
     protected $guarded = ['id'];
 
+    // Menambahkan property untuk mempermudah melaukan LAZY LOADING
+    // Method with() Lazy Loading
+    protected $with = ['category', 'author'];
+
     // Menghubungkan dengan Model Category
     // Nama methodnya harus sama dengan nama modelnya
     public function category ()
