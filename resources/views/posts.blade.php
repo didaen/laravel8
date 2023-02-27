@@ -14,7 +14,7 @@
             </div>
         </div>
     @else
-        <p>No post found</p>
+        <p class="text-center fs-4">No post found</p>
     @endif
     {{-- END IF MENGGUNAKAN BLADE --}}
 
