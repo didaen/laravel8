@@ -6,7 +6,7 @@
     {{-- IF MENGGUNAKAN BLADE --}}
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://api.unsplash.com/search/photos?query=wanderlust&client_id=SCA30XdpvgqERBHPuG6RJpHtwVUB6U6RpS8GpnlzgIM" class="card-img-top" alt="...">
+            <img src="https://source.unsplash.com/1200x400/?nature,water" class="card-img-top" alt="...">
             <div class="card-body text-center">
                 <h3 class="card-title">{{ $posts[0]->title }}</h3>
                 <p>
