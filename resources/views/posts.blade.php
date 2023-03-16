@@ -26,7 +26,8 @@
     {{-- END IF MENGGUNAKAN BLADE --}}
 
 
-    @foreach ($posts as $post)
+    {{-- Foreach mau mencetak semua kecuali postingan yang pertama --}}
+    @foreach ($posts->skip(1) as $post)
         <article class="mb-5 border-bottom pb-4">
             <h2>
                 <a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
