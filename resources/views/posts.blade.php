@@ -37,6 +37,11 @@
                             <h5 class="card-title">
                                 <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-dark">{{ $post->title }}</a>
                             </h5>
+                            <p>
+                                <small class="text-muted">
+                                    by <a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                                </small>
+                            </p>
                             <p class="card-text">
                                 {{ $post->excerpt }}
                             </p>
