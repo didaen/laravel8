@@ -6,7 +6,7 @@
     {{-- IF MENGGUNAKAN BLADE --}}
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x400/?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
+            <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
             <div class="card-body text-center">
                 <h3 class="card-title">
                     <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a>
@@ -25,18 +25,28 @@
     @endif
     {{-- END IF MENGGUNAKAN BLADE --}}
 
+    <div class="container">
+        <div class="row">
 
-    {{-- Foreach mau mencetak semua kecuali postingan yang pertama --}}
-    @foreach ($posts->skip(1) as $post)
-        <article class="mb-5 border-bottom pb-4">
-            <h2>
-                <a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
-            </h2>
-            <h5>by <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></h5>
+            {{-- Foreach mau mencetak semua kecuali postingan yang pertama --}}
+            @foreach ($posts->skip(1) as $post)
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-dark">{{ $post->title }}</a>
+                            </h5>
+                            <p class="card-text">
+                                {{ $post->excerpt }}
+                            </p>
+                            <a href="/posts/{{ $post->slug }}" class="text-decoration-none btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
 
-            <p>{{ $post->excerpt }}</p>
+        </div>
+    </div>
 
-            <p><a href="/posts/{{ $post->slug }}" class="text-decoration-none">Read more...</a></p>
-        </article>
-    @endforeach
 @endsection
