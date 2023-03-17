@@ -11,6 +11,7 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => "All Posts",
+            "active" => "blog",
             // "posts" => Post::all()
 
             // Membuat data yang ditampilkan berdasarkan tanggal pembuatan
@@ -23,6 +24,7 @@ class PostController extends Controller
     {
         return view('post', [
             "title" => "Single Post",
+            "active" => "blog",
             "post" => $post
         ]);
     }
