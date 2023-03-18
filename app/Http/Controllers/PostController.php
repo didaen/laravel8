@@ -9,6 +9,19 @@ class PostController extends Controller
 {
     public function index()
     {
+        // Untuk menangkap data menggunakan request
+        // dd = dump or die
+        // dd(request('search'));
+
+        // Buat variabel untuk menangkap query dan urutkan dari yang paling baru
+        $posts = Post::latest();
+
+        // Jika ada pencarian (sesuatu yang ditulis pada kolom pencarian),
+        if(request('search')) {
+            // maka cari juga
+            $posts->where('title', 'like', '%' . request('search') . '%');
+        }
+
         return view('posts', [
             "title" => "All Posts",
             "active" => "blog",
@@ -16,7 +29,9 @@ class PostController extends Controller
 
             // Membuat data yang ditampilkan berdasarkan tanggal pembuatan
             // Yang paling terkini ditampilkan paling atas
-            "posts" => Post::latest()->get()
+            // "posts" => Post::latest()->get()
+            "posts" => $posts->get()
+
         ]);
     }
 
