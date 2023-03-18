@@ -20,10 +20,6 @@
                 <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read more</a>
             </div>
         </div>
-    @else
-        <p class="text-center fs-4">No post found</p>
-    @endif
-    {{-- END IF MENGGUNAKAN BLADE --}}
 
     <div class="container">
         <div class="row">
@@ -55,4 +51,9 @@
         </div>
     </div>
 
+    @else
+        <p class="text-center fs-4">No post found</p>
+    @endif
+    {{-- END IF MENGGUNAKAN BLADE --}}
+    
 @endsection
