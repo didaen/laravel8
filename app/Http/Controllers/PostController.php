@@ -19,7 +19,8 @@ class PostController extends Controller
         // Jika ada pencarian (sesuatu yang ditulis pada kolom pencarian),
         if(request('search')) {
             // maka cari juga
-            $posts->where('title', 'like', '%' . request('search') . '%');
+            $posts->where('title', 'like', '%' . request('search') . '%')
+                  ->orWhere('body', 'like', '%' . request('search') . '%');
         }
 
         return view('posts', [
