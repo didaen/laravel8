@@ -16,6 +16,11 @@ class Post extends Model
     // Method with() Lazy Loading
     protected $with = ['category', 'author'];
 
+    public function scopeFilter($query)
+    {
+
+    }
+
     // Menghubungkan dengan Model Category
     // Nama methodnya harus sama dengan nama modelnya
     public function category ()
