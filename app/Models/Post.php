@@ -19,6 +19,12 @@ class Post extends Model
     public function scopeFilter($query)
     {
 
+        // Jika ada pencarian (sesuatu yang ditulis pada kolom pencarian),
+        if(request('search')) {
+            // maka kembalikan querynya dengan kondisi
+            return $query->where('title', 'like', '%' . request('search') . '%')
+                  ->orWhere('body', 'like', '%' . request('search') . '%');
+        }
     }
 
     // Menghubungkan dengan Model Category
