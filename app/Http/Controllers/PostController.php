@@ -14,7 +14,6 @@ class PostController extends Controller
         // dd(request('search'));
 
         // Buat variabel untuk menangkap query dan urutkan dari yang paling baru
-        $posts = Post::latest();
 
         return view('posts', [
             "title" => "All Posts",
@@ -24,7 +23,7 @@ class PostController extends Controller
             // Membuat data yang ditampilkan berdasarkan tanggal pembuatan
             // Yang paling terkini ditampilkan paling atas
             // "posts" => Post::latest()->get()
-            "posts" => $posts->get()
+            "posts" => Post::latest()->get()
 
         ]);
     }
