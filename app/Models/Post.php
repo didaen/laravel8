@@ -16,14 +16,14 @@ class Post extends Model
     // Method with() Lazy Loading
     protected $with = ['category', 'author'];
 
-    public function scopeFilter($query)
+    public function scopeFilter($query, array $filters)
     {
 
         // Jika ada pencarian (sesuatu yang ditulis pada kolom pencarian),
-        if(request('search')) {
+        if(isset($filters['search']) ? $filters['search'] : false) {
             // maka kembalikan querynya dengan kondisi
-            return $query->where('title', 'like', '%' . request('search') . '%')
-                  ->orWhere('body', 'like', '%' . request('search') . '%');
+            return $query->where('title', 'like', '%' . $filters['search'] . '%')
+                  ->orWhere('body', 'like', '%' . $filters['search'] . '%');
         }
     }
 
