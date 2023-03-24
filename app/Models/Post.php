@@ -19,12 +19,13 @@ class Post extends Model
     public function scopeFilter($query, array $filters)
     {
 
+        // Menggunakan when() dan null coalescing operator untuk mempersingkat
         // Jika ada pencarian (sesuatu yang ditulis pada kolom pencarian),
-        if(isset($filters['search']) ? $filters['search'] : false) {
+        $query->when($filters['search'] ?? false, function($query, $search) {
             // maka kembalikan querynya dengan kondisi
-            return $query->where('title', 'like', '%' . $filters['search'] . '%')
-                  ->orWhere('body', 'like', '%' . $filters['search'] . '%');
-        }
+            return $query->where('title', 'like', '%' . $search . '%')
+            ->orWhere('body', 'like', '%' . $search . '%');
+        });
     }
 
     // Menghubungkan dengan Model Category
