@@ -34,6 +34,14 @@ class Post extends Model
                 $query->where('slug', $category);
             });
         });
+
+        // MENGGUNAKAN JOIN TABLE
+        // Jika pengguna mencari suatu postingan berdasarkan author
+        $query->when($filters['author'] ?? false, fn($query, $author) =>
+            $query->whereHas('author', fn($query) =>
+                $query->where('username', $author)
+            )
+        );
     }
 
     // Menghubungkan dengan Model Category
