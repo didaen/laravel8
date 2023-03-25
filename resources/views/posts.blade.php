@@ -77,4 +77,6 @@
     @endif
     {{-- END IF MENGGUNAKAN BLADE --}}
 
+    {{ $posts->links() }}
+
 @endsection
