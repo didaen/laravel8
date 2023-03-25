@@ -49,7 +49,7 @@
                             </h5>
                             <p>
                                 <small class="text-muted">
-                                    by <a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                                    by <a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
                                 </small>
                             </p>
                             <p class="card-text">
