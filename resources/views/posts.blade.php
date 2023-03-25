@@ -77,6 +77,8 @@
     @endif
     {{-- END IF MENGGUNAKAN BLADE --}}
 
-    {{ $posts->links() }}
+    <div class="d-flex justify-content-end">
+        {{ $posts->links() }}
+    </div>
 
 @endsection
