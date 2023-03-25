@@ -7,6 +7,12 @@
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
             <form action="/posts">
+
+                {{-- MENGGABUNGKAN FILTER CATEGORY DENGAN SEARCH --}}
+                @if (request('category'))
+                    <input type="hidden" name="category" value="{{ request('category') }}">
+                @endif
+
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
                     <button class="btn btn-primary" type="submit">Search</button>
