@@ -11,6 +11,8 @@
                 {{-- MENGGABUNGKAN FILTER CATEGORY DENGAN SEARCH --}}
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
+                @elseif (request('author'))
+                    <input type="hidden" name="author" value="{{ request('author') }}">
                 @endif
 
                 <div class="input-group mb-3">
