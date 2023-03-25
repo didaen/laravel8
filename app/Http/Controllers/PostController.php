@@ -47,7 +47,7 @@ class PostController extends Controller
             // Membuat data yang ditampilkan berdasarkan tanggal pembuatan
             // Yang paling terkini ditampilkan paling atas
             // "posts" => Post::latest()->get()
-            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->get()
+            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(4)
 
         ]);
     }
