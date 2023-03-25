@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -13,10 +15,32 @@ class PostController extends Controller
         // dd = dump or die
         // dd(request('search'));
 
-        // Buat variabel untuk menangkap query dan urutkan dari yang paling baru
+        // Membuat perubahan untuk title halaman
+        // sesuai dengan yang sedang dicari
+        // Pada mulanya $title kosong
+        $title = '';
+
+        // Jika ada pengiriman data menggunakan URL dengan key 'category'
+        if(request('category')) {
+            // maka cari pada database model Category
+            // yang pertama ditemukan dimana slug-nya sama dengan 
+            // value yang dikirim melalui request('category')
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+
+        // Jika ada pengiriman data menggunakan URL dengan key 'author'
+        if(request('author')) {
+            // maka cari pada database model User
+            // yang pertama ditemukan dimana username-nya sama dengan 
+            // value yang dikirim melalui request('author')
+            $author = User::firstWhere('username', request('author'));
+            $title = ' by ' . $author->name;
+        }
+
 
         return view('posts', [
-            "title" => "All Posts",
+            "title" => "All Posts" . $title,
             "active" => "blog",
             // "posts" => Post::all()
 
