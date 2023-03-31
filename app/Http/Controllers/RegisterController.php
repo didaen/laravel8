@@ -13,4 +13,11 @@ class RegisterController extends Controller
             'active' => 'register'
         ]);
     }
+
+    // Method untuk menangani data pengguna yang register
+    public function store()
+    {
+        // Menangkap semua data yang dikirim dan menampilkan
+        return request()->all();
+    }
 }
