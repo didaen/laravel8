@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-4">
             <main class="form-registration w-100 m-auto">
-                <form>
+                <form action="/register" method="post">
                     <img class="mb-4" src="/img/logopyabumuda.png" alt="Logo Physics Yourself" width="72" height="72">
                     <h1 class="h3 mb-3 fw-normal">Registration</h1>
                 
