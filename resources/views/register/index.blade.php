@@ -3,10 +3,10 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <main class="form-signin w-100 m-auto">
+            <main class="form-registration w-100 m-auto">
                 <form>
                     <img class="mb-4" src="../img/logopyabumuda.png" alt="Logo Physics Yourself" width="72" height="72">
-                    <h1 class="h3 mb-3 fw-normal">Login</h1>
+                    <h1 class="h3 mb-3 fw-normal">Registration</h1>
                 
                     <div class="form-floating">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -20,7 +20,7 @@
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
                 </form>
 
-                <small class="d-block text-center mt-3">Not registered? <a href="/register">Register now!</a></small>
+                <small class="d-block text-center mt-3">Already have an account? <a href="/register">Login</a></small>
             </main> 
 
         </div>
