@@ -52,6 +52,10 @@ Route::get('/categories', function (Category $category) {
 Route::get('/login', [LoginController::class, 'index']);
 
 // REGISTER
+// Saat pengguna menekan tombol register pada halama login
 Route::get('/register', [RegisterController::class, 'index']);
+
+// Saat pengguna melakukan register
+Route::post('/register', [RegisterController::class, 'store']);
 
 
