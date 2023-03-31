@@ -1,10 +1,9 @@
 <?php
 
-use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Models\Category;
-use App\Models\User;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,5 +46,8 @@ Route::get('/categories', function (Category $category) {
         'categories' => Category::all()
     ]);
 });
+
+// LOGIN
+Route::get('/login', [LoginController::class, 'index']);
 
 
