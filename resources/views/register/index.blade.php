@@ -14,7 +14,7 @@
                     </div>
                     <div class="form-floating">
                         <input type="text" class="form-control" id="username" placeholder="Username">
-                        <label for="username">Email address</label>
+                        <label for="username">Username</label>
                     </div>
                     <div class="form-floating">
                         <input type="email" class="form-control" id="email" placeholder="Email">
