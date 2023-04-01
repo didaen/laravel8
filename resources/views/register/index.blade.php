@@ -10,7 +10,7 @@
                     <h1 class="h3 mb-3 fw-normal">Registration</h1>
                 
                     <div class="form-floating">
-                        <input type="text" class="form-control rounded-top" id="name" name="name" placeholder="Name">
+                        <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name">
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating">
