@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,12 @@ class RegisterController extends Controller
 
         // Jika data yang dikiirmkan sudah benar atau lolos, maka jalankan
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        // Melakukan enkripsi password menggunakan bcrypt
+        // $validatedData['password'] = bcrypt($validatedData['password']);
+
+        // Melakukan enkripsi password menggunakan hashing yang sebenarnya juga menggunakan bcrypt
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
 
         User::create($validatedData);
 
