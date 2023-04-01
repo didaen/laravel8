@@ -10,7 +10,7 @@
                     <h1 class="h3 mb-3 fw-normal">Registration</h1>
                 
                     <div class="form-floating">
-                        <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" required>
+                        <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" required value="{{ old('name') }}">
                         <label for="name">Name</label>
                         @error('name')
                             <div class="invalid-feedback"> 
@@ -19,7 +19,7 @@
                         @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" required>
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" required value="{{ old('username') }}">
                         <label for="username">Username</label>
                         @error('username')
                             <div class="invalid-feedback"> 
@@ -28,7 +28,7 @@
                         @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email" required>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email" required value="{{ old('email') }}">
                         <label for="email">Email</label>
                         @error('email')
                             <div class="invalid-feedback"> 
