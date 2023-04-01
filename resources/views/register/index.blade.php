@@ -12,11 +12,11 @@
                     <div class="form-floating">
                         <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name">
                         <label for="name">Name</label>
-                        
-                            <div class="invalid-tooltip">
-                                Please enter a valid name.
+                        @error('name')
+                            <div class="invalid-feedback"> 
+                                {{ $message }}
                             </div>
-                        
+                        @enderror
                     </div>
                     <div class="form-floating">
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username">
