@@ -15,9 +15,9 @@ class RegisterController extends Controller
     }
 
     // Method untuk menangani data pengguna yang register
-    public function store()
+    public function store(Request $request)
     {
         // Menangkap semua data yang dikirim dan menampilkan
-        return request()->all();
+        return $request->all();
     }
 }
