@@ -49,7 +49,11 @@ Route::get('/categories', function (Category $category) {
 });
 
 // LOGIN
+// Saat pengguna menekan link Login
 Route::get('/login', [LoginController::class, 'index']);
+
+// Saat pengguna melakukan login
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 // REGISTER
 // Saat pengguna menekan tombol register pada halama login
