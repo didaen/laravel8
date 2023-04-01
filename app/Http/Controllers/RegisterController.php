@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -27,7 +28,7 @@ class RegisterController extends Controller
 
         // Jika data yang dikiirmkan sudah benar atau lolos, maka jalankan
 
-        dd('registrasi berhasil');
+        User::create($validatedData);
 
         
     }
