@@ -28,6 +28,8 @@ class RegisterController extends Controller
 
         // Jika data yang dikiirmkan sudah benar atau lolos, maka jalankan
 
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
         User::create($validatedData);
 
         
