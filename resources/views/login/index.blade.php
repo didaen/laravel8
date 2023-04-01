@@ -19,7 +19,7 @@
                     <h1 class="h3 mb-3 fw-normal">Login</h1>
                 
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="email" name="name" placeholder="name@example.com" autofocus required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" autofocus required>
                         <label for="email">Email address</label>
                     </div>
                     <div class="form-floating">
