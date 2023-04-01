@@ -35,9 +35,11 @@ class RegisterController extends Controller
         // Melakukan enkripsi password menggunakan hashing yang sebenarnya juga menggunakan bcrypt
         $validatedData['password'] = Hash::make($validatedData['password']);
 
-
+        // Masukkan data ke database
         User::create($validatedData);
 
+        // Kembali ke halaman Login
+        return redirect('/login');
         
     }
 }
