@@ -15,7 +15,7 @@
             <main class="form-signin w-100 m-auto">
                 <form action="/login" method="post">
                     @csrf
-                    <img class="mb-4" src="../img/logopyabumuda.png" alt="Logo Physics Yourself" width="72" height="72">
+                    <img class="mb-4" src="/img/logopyabumuda.png" alt="Logo Physics Yourself" width="72" height="72">
                     <h1 class="h3 mb-3 fw-normal">Login</h1>
                 
                     <div class="form-floating">
