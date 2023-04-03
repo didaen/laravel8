@@ -41,4 +41,16 @@ class LoginController extends Controller
         // Kita juga dapat menggunakan flash data atau memanfaatkan session untuk menampilkan pesan error
         return back()->with('loginError', 'Login failed!');
     }
+
+    // Method yang mengatur untuk logout
+    public function logout()
+    {
+        Auth::logout();
+ 
+        request()->session()->invalidate();
+    
+        request()->session()->regenerateToken();
+    
+        return redirect('/');
+    }
 }
