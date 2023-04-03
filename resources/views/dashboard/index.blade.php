@@ -8,6 +8,9 @@
 
     {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    {{-- Bootstrap Icons --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
@@ -73,7 +76,10 @@
         <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Logout</a>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="nav-link px-3 bg-dark border-0"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                  </form>
             </div>
         </div>
     </header>
