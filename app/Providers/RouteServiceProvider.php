@@ -17,7 +17,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    // Kalau user berusaha mengakses ke halaman yg bukan hak aksesnya maka akan di redirect ke route ini
+    // public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * The controller namespace for the application.
