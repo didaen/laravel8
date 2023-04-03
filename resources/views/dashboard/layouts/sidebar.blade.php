@@ -9,7 +9,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                <span data-feather="file" class="align-text-bottom"></span>
+                <span data-feather="file-text" class="align-text-bottom"></span>
                 My Post
                 </a>
             </li>
