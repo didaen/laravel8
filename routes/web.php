@@ -51,7 +51,7 @@ Route::get('/categories', function (Category $category) {
 
 // LOGIN
 // Saat pengguna menekan link Login
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
 // Saat pengguna melakukan login
 Route::post('/logout', [LoginController::class, 'logout']);
