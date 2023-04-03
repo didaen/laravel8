@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -61,5 +62,8 @@ Route::get('/register', [RegisterController::class, 'index']);
 
 // Saat pengguna melakukan register
 Route::post('/register', [RegisterController::class, 'store']);
+
+// Setelah melakukan login pengguna akan diarahkan ke halaman ini
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
