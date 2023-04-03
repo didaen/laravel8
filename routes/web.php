@@ -54,6 +54,9 @@ Route::get('/categories', function (Category $category) {
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 
 // Saat pengguna melakukan login
+Route::post('/logout', [LoginController::class, 'logout']);
+
+// Logout
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 // REGISTER
