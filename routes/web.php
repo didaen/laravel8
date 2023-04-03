@@ -61,7 +61,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 // REGISTER
 // Saat pengguna menekan tombol register pada halama login
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
 // Saat pengguna melakukan register
 Route::post('/register', [RegisterController::class, 'store']);
