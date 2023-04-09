@@ -73,5 +73,5 @@ Route::get('/dashboard', function() {
 
 // Membuat DashboardPostController
 // Controller RESOURCE
-Route::resource('photos', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
