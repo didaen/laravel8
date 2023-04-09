@@ -5,7 +5,7 @@
         <h1 class="h2">Create New Post</h1>
     </div>
     <div class="col-lg-8">
-        <form>
+        <form method="post" action="/dashboard/posts">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
