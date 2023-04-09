@@ -26,7 +26,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dasboard.posts.create');
+        return view('dashboard.posts.create');
     }
 
     /**
