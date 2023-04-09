@@ -14,7 +14,7 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        //
+        return 'Ini halaman Dashboard Post';
     }
 
     /**
