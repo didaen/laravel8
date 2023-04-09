@@ -20,7 +20,17 @@
               <td>{{ $loop->iteration }}</td>
               <td>{{ $post->title }}</td>
               <td>{{ $post->category->name }}</td>
-              <td>Ubah, Hapus</td>
+              <td>
+                <a href="#" class="badge bg-info">
+                    <span data-feather="eye" class="align-text-bottom"></span>
+                </a>
+                <a href="#" class="badge bg-warning">
+                    <span data-feather="edit" class="align-text-bottom"></span>
+                </a>
+                <a href="#" class="badge bg-danger">
+                    <span data-feather="x" class="align-text-bottom"></span>
+                </a>
+              </td>
             </tr>
             @endforeach
           </tbody>
