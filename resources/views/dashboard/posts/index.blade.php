@@ -21,7 +21,7 @@
               <td>{{ $post->title }}</td>
               <td>{{ $post->category->name }}</td>
               <td>
-                <a href="#" class="badge bg-info">
+                <a href="/dashboard/posts/{{ $post->id }}" class="badge bg-info">
                     <span data-feather="eye" class="align-text-bottom"></span>
                 </a>
                 <a href="#" class="badge bg-warning">
