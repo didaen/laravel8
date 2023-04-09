@@ -61,4 +61,11 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    // Menambahkan method ini agar secara otomatis pemanggilan data
+    // secara default menggunakan slug buka id lagi
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
