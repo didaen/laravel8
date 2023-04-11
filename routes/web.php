@@ -71,6 +71,11 @@ Route::get('/dashboard', function() {
     return view('dashboard.index');
 })->middleware('auth');
 
+// Route untuk FETCH pembuatan slug
+// Route yang menuju method controller resource harus SEBELUM route controller resource
+// Karena sudah nyoba nulis setelahnya dan FETCH nya gagal
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+
 // Membuat DashboardPostController
 // Controller RESOURCE
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
