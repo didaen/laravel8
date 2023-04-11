@@ -18,4 +18,21 @@
             <button type="submit" class="btn btn-primary">Create post</button>
           </form>
     </div>
+    {{-- <a href="/dashboard/posts/checkSlug">Coba klik</a> --}}
+    <script>
+      // Ambil component dengan id title kemudian masukkan ke const title
+      const title = document.querySelector('#title');
+
+      // Ambil component dengan id slug kemudian masukkan ke const slug
+      const slug = document.querySelector('#slug');
+
+      // Event handler untuk menangani ketika ada perubahan atau permintaan slug
+      title.addEventListener('change', function() {
+        fetch('/dashboard/posts/checkSlug?title=' + title.value)
+          .then(response => response.json())
+          .then(data => slug.value = data.slug)
+
+        // console.log('OK');
+      });
+    </script>
 @endsection
