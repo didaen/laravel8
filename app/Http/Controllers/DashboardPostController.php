@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
 {
@@ -51,6 +52,20 @@ class DashboardPostController extends Controller
             'category_id' => 'required',
             'body' => 'required'
         ]);
+
+        // user_id
+        $validatedData['user_id'] = auth()->user()->id;
+
+        // excerpt
+        // ... adalah default makanya tidak perlu ditulis
+        // strip_tags() punya PHP untuk menghilangkan semua tag html
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        // Inset ke database
+        Post::create($validatedData);
+
+        // Kembalikan sambil menampilkan flash data
+        return redirect('/dashboard/posts')->with('success', 'New post has been added!');
     }
 
     /**
