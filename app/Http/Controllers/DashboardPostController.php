@@ -41,7 +41,16 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        // Mencoba pengiriman postingan untuk pertama kali
+        // return $request;
+
+        // Langkah pertama, memvalidasi data postingan sebelum disimpan ke database
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'body' => 'required'
+        ]);
     }
 
     /**
