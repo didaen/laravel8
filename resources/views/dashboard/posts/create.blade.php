@@ -47,5 +47,11 @@
 
         // console.log('OK');
       });
+
+      // Menonaktifkan fungsi menambahkan attachment trix editor via JS
+      document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+      });
+
     </script>
 @endsection
