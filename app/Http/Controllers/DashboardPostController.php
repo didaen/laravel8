@@ -104,7 +104,38 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'category_id' => 'required',
+            'body' => 'required'
+        ];
+
+        // Ketika pengguna melakukan update data, namun dengan slug yang sama, maka
+        // Slug akan terseteksi tidak unique dan akan gagal mengupdate
+        // Untuk itu perlu melakukan pengecekan slug tersendiri
+        // Jika slug yang baru tidak sama dengan slug yang lama
+        if($request->slug != $post->slug) {
+            // maka buat aturan untuk slug
+            $rules['slug'] = 'required|unique:posts';
+        }
+
+        // Lakukan validasi terhadap data dari $request dengan rules yang sudah dibuat
+        $validatedData = $request->validate($rules);
+
+         // user_id
+         $validatedData['user_id'] = auth()->user()->id;
+
+         // excerpt
+         // ... adalah default makanya tidak perlu ditulis
+         // strip_tags() punya PHP untuk menghilangkan semua tag html
+         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+ 
+         // Inset ke database
+         Post::where('id', $post->id)
+             ->update($validatedData);
+ 
+         // Kembalikan sambil menampilkan flash data
+         return redirect('/dashboard/posts')->with('success', 'Post has been updated.');
     }
 
     /**
