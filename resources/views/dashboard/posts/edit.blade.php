@@ -46,7 +46,7 @@
               <input id="body" type="hidden" name="body" required value="{{ old('body', $post->body) }}">
               <trix-editor input="body"></trix-editor>
             </div>
-            <button type="submit" class="btn btn-primary">Edit Post</button>
+            <button type="submit" class="btn btn-primary">Update Post</button>
           </form>
     </div>
     {{-- <a href="/dashboard/posts/checkSlug">Coba klik</a> --}}
