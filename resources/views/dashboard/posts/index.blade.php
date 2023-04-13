@@ -39,7 +39,7 @@
                 <form action="/dashboard/posts" method="post">
                   @method('delete')
                   @csrf
-                  <button class="badge bg-danger"><span data-feather="x" class="align-text-bottom"></span></button>
+                  <button class="badge bg-danger border-0"><span data-feather="x" class="align-text-bottom"></span></button>
                 </form>
                     
                 </a>
