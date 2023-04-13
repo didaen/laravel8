@@ -112,7 +112,15 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        // Dari URL yang dikirimkan adalah $post->slug
+        // Kemudian dengan slug yang unique itu di dapat 1 row pada Model Post, tabel posts
+        // 1 row itu kemudian kita dapat ambil apa saja, termasuk id-nya
+
+        // Hapus postingan berdasarkan id-nya
+        Post::destroy($post->id);
+
+        // Kembalikan sambil menampilkan flash data
+        return redirect('/dashboard/posts')->with('success', 'Post has been deleted.');
     }
 
     // Method untuk mengirimkan data title untuk membuat slug
