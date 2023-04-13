@@ -36,6 +36,10 @@
                 <a href="#" class="badge bg-warning">
                     <span data-feather="edit" class="align-text-bottom"></span>
                 </a>
+                <form action="/dashboard/posts" method="post">
+                  @method('delete')
+                  @csrf
+                </form>
                 <a href="#" class="badge bg-danger">
                     <span data-feather="x" class="align-text-bottom"></span>
                 </a>
