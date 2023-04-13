@@ -39,7 +39,7 @@
                 <form action="/dashboard/posts" method="post" class="d-inline">
                   @method('delete')
                   @csrf
-                  <button class="badge bg-danger border-0"><span data-feather="x" class="align-text-bottom"></span></button>
+                  <button class="badge bg-danger border-0"><span data-feather="x" class="align-text-bottom" onclick="return confirm('Are you sure want to delete this post?')"></span></button>
                 </form>
                     
                 </a>
