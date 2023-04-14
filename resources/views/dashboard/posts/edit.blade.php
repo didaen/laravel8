@@ -54,9 +54,12 @@
             </div>
             {{-- AKHIR CATEGORY POST --}}
 
-            {{-- AWAL FOTO POST --}}
+            {{-- AWAL IMAGE POST --}}
             <div class="mb-3">
               <label for="image" class="form-label @error('image') is-invalid @enderror">Post Image</label>
+
+              {{-- Mengirimkan hidden <input> untuk mendapat image lamanya --}}
+              <input type="hidden" name="oldImage" value="{{ $post->image }}">
 
               @if($post->image)
                 <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
@@ -71,7 +74,7 @@
                 </div>
               @enderror
             </div>
-            {{-- AKHIR FOTO POST --}}
+            {{-- AKHIR IMAGE POST --}}
 
             {{-- AWAL BODY POST --}}
             <div class="mb-3">
