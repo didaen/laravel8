@@ -45,6 +45,11 @@ class DashboardPostController extends Controller
         // Mencoba pengiriman postingan untuk pertama kali
         // return $request;
 
+        // DUMP, DIE, AND DEBUG
+        // Bagian bawah tidak akan dijalankan (die),
+        // kita akan melakukan var_dump, sekaligus melakukan debug
+        ddd($request);
+
         // Langkah pertama, memvalidasi data postingan sebelum disimpan ke database
         $validatedData = $request->validate([
             'title' => 'required|max:255',
