@@ -11,7 +11,7 @@
     <div class="col-lg-8">
 
         {{-- AWAL FORM --}}
-        <form method="post" action="/dashboard/posts" class="mb-5">
+        <form method="post" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
             @csrf
 
             {{-- AWAL FIELD TITLE --}}
