@@ -190,6 +190,13 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
+        // Jika gambar lamanya ada
+        if($post->image) {
+
+            // Hapus gambar pada storage dengan nama tersebut
+            Storage::delete($post->image);
+        }
+
         // Dari URL yang dikirimkan adalah $post->slug
         // Kemudian dengan slug yang unique itu di dapat 1 row pada Model Post, tabel posts
         // 1 row itu kemudian kita dapat ambil apa saja, termasuk id-nya
