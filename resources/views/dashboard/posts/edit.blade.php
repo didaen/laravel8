@@ -11,7 +11,7 @@
     <div class="col-lg-8">
 
         {{-- AWAL FORM EDIT POST --}}
-        <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5">
+        <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5" enctype="multipart/form-data">
           @method('put')
           @csrf
 
