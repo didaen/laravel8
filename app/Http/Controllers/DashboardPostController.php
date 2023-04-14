@@ -66,6 +66,16 @@ class DashboardPostController extends Controller
             'body' => 'required'
         ]);
 
+        // Gambar tidak wajib, karena jika pengguna tidak mengupload gambar
+        // secara otomatis gambar akan diambil dari Unsplash
+        // Gambar yg diupload akan melewati validasi dahulu
+        // Jika pengguna mengupload gambar,
+        if($request->file('image')) {
+
+            // maka masukkan ke $validatedData['image'] dan simpan gambar ke folder 'post-images'
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        };
+
         // user_id
         $validatedData['user_id'] = auth()->user()->id;
 
