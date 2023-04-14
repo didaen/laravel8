@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardPostController extends Controller
 {
@@ -153,6 +154,13 @@ class DashboardPostController extends Controller
         // Gambar yang telah divalidasi akan disimpan ke folder post-images
         // Jika pengguna mengupload gambar,
         if($request->file('image')) {
+
+            // Jika gambar lamanya ada
+            if($request->oldImage) {
+
+                // Hapus gambar pada storage dengan nama tersebut
+                Storage::delete($request->oldImage);
+            }
 
             // maka masukkan ke $validatedData['image'] dan simpan gambar ke folder 'post-images'
             $validatedData['image'] = $request->file('image')->store('post-images');
