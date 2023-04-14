@@ -2,12 +2,20 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+        {{-- AWAL JUDUL HALAMAN --}}
         <h1 class="h2">Edit Post</h1>
+        {{-- AWAL JUDUL HALAMAN --}}
+
     </div>
     <div class="col-lg-8">
+
+        {{-- AWAL FORM EDIT POST --}}
         <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5">
           @method('put')
           @csrf
+
+            {{-- AWAL TITLE POST --}}
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{ old('title', $post->title) }}">
@@ -17,6 +25,9 @@
                 </div>
               @enderror
             </div>
+            {{-- AKHIR TITLE POST --}}
+
+            {{-- AWAL SLUG POST --}}
             <div class="mb-3">
               <label for="slug" class="form-label">Slug</label>
               <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug', $post->slug) }}">
@@ -26,6 +37,9 @@
                 </div>
               @enderror
             </div>
+            {{-- AKHIR SLUG POST --}}
+
+            {{-- AWAL CATEGORY POST --}}
             <div class="mb-3">
               <label for="category" class="form-label">Category</label>
               <select class="form-select @error('category_id') is-invalid @enderror" name="category_id">
@@ -38,6 +52,9 @@
                 @endforeach
               </select>
             </div>
+            {{-- AKHIR CATEGORY POST --}}
+
+            {{-- AWAL BODY POST --}}
             <div class="mb-3">
               <label for="body" class="form-label">Body</label>
               @error('body')
@@ -46,8 +63,15 @@
               <input id="body" type="hidden" name="body" required value="{{ old('body', $post->body) }}">
               <trix-editor input="body"></trix-editor>
             </div>
+            {{-- AKHIR BODY POST --}}
+
+            {{-- AWAL BUTTON UPDATE POST --}}
             <button type="submit" class="btn btn-primary">Update Post</button>
+            {{-- AKHIR BUTTON UPDATE POST --}}
+
           </form>
+          {{-- AKHIR EDIT FORM --}}
+
     </div>
     {{-- <a href="/dashboard/posts/checkSlug">Coba klik</a> --}}
     <script>
