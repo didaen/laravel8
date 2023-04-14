@@ -48,7 +48,14 @@ class DashboardPostController extends Controller
         // DUMP, DIE, AND DEBUG
         // Bagian bawah tidak akan dijalankan (die),
         // kita akan melakukan var_dump, sekaligus melakukan debug
-        ddd($request);
+        // ddd($request);
+
+        // Untuk memanggil file yang dikirim harus melalui $request->file()
+        // Tidak bisa lewat $request saja
+        // Ingat ketika di-ddd() request dan files berada di tempat yang berbeda
+        // file berupa image dan simpan di folder post-images (storage/app/post-images)
+        // Fungsi di bawah ini mengembalikan PATH sekaligus menguploadnya
+        return $request->file('image')->store('post-images');
 
         // Langkah pertama, memvalidasi data postingan sebelum disimpan ke database
         $validatedData = $request->validate([
