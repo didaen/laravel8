@@ -55,13 +55,14 @@ class DashboardPostController extends Controller
         // Ingat ketika di-ddd() request dan files berada di tempat yang berbeda
         // file berupa image dan simpan di folder post-images (storage/app/post-images)
         // Fungsi di bawah ini mengembalikan PATH sekaligus menguploadnya
-        return $request->file('image')->store('post-images');
+        // return $request->file('image')->store('post-images');
 
         // Langkah pertama, memvalidasi data postingan sebelum disimpan ke database
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'image' => 'image|max:1024',
             'body' => 'required'
         ]);
 
