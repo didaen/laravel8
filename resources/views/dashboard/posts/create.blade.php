@@ -56,7 +56,7 @@
             {{-- AWAL FIELD FOTO --}}
             <div class="mb-3">
               <label for="image" class="form-label @error('image') is-invalid @enderror">Post Image</label>
-              <img class="img-preview img-fluid">
+              <img class="img-preview img-fluid mb-3 col-sm-5">
               <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
               @error('image')
                 <div class="invalid-feedback">
@@ -105,6 +105,30 @@
       document.addEventListener('trix-file-accept', function(e) {
         e.preventDefault();
       });
+
+      // Membuat fungsi imagePreview yang akan digunakan untuk menampilkan preview gambar yang dipilih
+      function previewImage() {
+
+        // Ambil komponen dengan id image
+        const image = document.querySelector('#image');
+  
+        // Ambil komponen dengan class img-preview
+        const imgPreview = document.querySelector('.img-preview');
+
+        // Membuat display imgPreview menjadi block
+        imgPreview.style.display = 'block';
+
+        // Membuat instance dari class FileReader()
+        const oFReader = new FileReader();
+
+        // Mengambil URL dari image
+        oFReader.readAsDataURL(image.files[0]);
+
+        // Saat URL didapat jalankan function untuk mengganti attribute src dari imgPreview menjadi URL oFReader
+        oFReader.onload = function(oFREvent) {
+          imgPreview.src = oFREvent.target.result;
+        }
+      }
 
     </script>
 @endsection
