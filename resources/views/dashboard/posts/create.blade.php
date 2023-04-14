@@ -56,7 +56,8 @@
             {{-- AWAL FIELD FOTO --}}
             <div class="mb-3">
               <label for="image" class="form-label @error('image') is-invalid @enderror">Post Image</label>
-              <input class="form-control" type="file" id="image" name="image">
+              <img class="img-preview img-fluid">
+              <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
               @error('image')
                 <div class="invalid-feedback">
                   {{ $message }}
