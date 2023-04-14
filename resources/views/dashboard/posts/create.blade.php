@@ -53,6 +53,13 @@
             </div>
             {{-- AKHIR FIELD CATEGORY --}}
 
+            {{-- AWAL FIELD FOTO --}}
+            <div class="mb-3">
+              <label for="image" class="form-label">Post Image</label>
+              <input class="form-control" type="file" id="image" name="image">
+            </div>
+            {{-- AKHIR FIELD FOTO --}}
+
             {{-- AWAL FIELD BODY --}}
             <div class="mb-3">
               <label for="body" class="form-label">Body</label>
@@ -67,7 +74,7 @@
             {{-- AWAL BUTTON CREATE POST --}}
             <button type="submit" class="btn btn-primary">Create Post</button>
             {{-- AWAL BUTTON CREATE POST --}}
-            
+
           </form>
           {{-- AKHIR FORM --}}
     </div>
