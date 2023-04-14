@@ -130,6 +130,7 @@ class DashboardPostController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
+            'image' => 'image|file|max:1024',
             'body' => 'required'
         ];
 
@@ -138,12 +139,23 @@ class DashboardPostController extends Controller
         // Untuk itu perlu melakukan pengecekan slug tersendiri
         // Jika slug yang baru tidak sama dengan slug yang lama
         if($request->slug != $post->slug) {
+            
             // maka buat aturan untuk slug
             $rules['slug'] = 'required|unique:posts';
         }
 
         // Lakukan validasi terhadap data dari $request dengan rules yang sudah dibuat
         $validatedData = $request->validate($rules);
+
+        // Gambar tidak wajib, karena jika pengguna tidak mengupload gambar
+        // secara otomatis gambar akan diambil dari Unsplash
+        // Gambar yg diupload akan melewati validasi dahulu
+        // Jika pengguna mengupload gambar,
+        if($request->file('image')) {
+
+            // maka masukkan ke $validatedData['image'] dan simpan gambar ke folder 'post-images'
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        };
 
          // user_id
          $validatedData['user_id'] = auth()->user()->id;
