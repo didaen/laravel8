@@ -139,7 +139,7 @@ class DashboardPostController extends Controller
         // Untuk itu perlu melakukan pengecekan slug tersendiri
         // Jika slug yang baru tidak sama dengan slug yang lama
         if($request->slug != $post->slug) {
-            
+
             // maka buat aturan untuk slug
             $rules['slug'] = 'required|unique:posts';
         }
@@ -149,7 +149,8 @@ class DashboardPostController extends Controller
 
         // Gambar tidak wajib, karena jika pengguna tidak mengupload gambar
         // secara otomatis gambar akan diambil dari Unsplash
-        // Gambar yg diupload akan melewati validasi dahulu
+        // Gambar yang belum divalidasi akan disimpan ke tempat penyimpanan sementara
+        // Gambar yang telah divalidasi akan disimpan ke folder post-images
         // Jika pengguna mengupload gambar,
         if($request->file('image')) {
 
