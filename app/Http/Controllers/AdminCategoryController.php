@@ -21,6 +21,14 @@ class AdminCategoryController extends Controller
             // Gagalkan sambil tampilkan pesan 403 Forbidden
             abort(403);
         }
+
+        // Jika yang mengakses bukan didaen
+        if(auth()->user()->username !== 'didaen') {
+
+            // Gagaglkan
+            abort(403);
+        }
+
         return view('dashboard.categories.index', [
             'categories' => Category::all()
         ]);
