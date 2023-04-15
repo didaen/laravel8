@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
+use App\Models\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +27,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+
+        // Membuat aturan untuk admin
+        // Gate tidak perlu aturan autentikasi lagi
+        // karena Gate itu aturan untuk user yang sudah bisa login
+        // Setelah login ngapain
+        Gate::define('admin', function(User $user) {
+
+            // Gerbangnya hanya bisa diakses oleh user dengan username didaen
+            return $user->username === 'didaen';
+        });
     }
 }
