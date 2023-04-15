@@ -22,6 +22,10 @@ class AdminCategoryController extends Controller
             // Gagalkan sambil tampilkan pesan 403 Forbidden
             // abort(403);
         // }
+        
+        // Pengecekan otorisasi menggunakan GATE
+        // Jadi dia hanya bisa mengakses next line kalo dia sudah login dan dia admin
+        $this->authorize('admin');
 
         // Buka view dashboard/categories/index.blade.php dan kirimkan data
         return view('dashboard.categories.index', [
