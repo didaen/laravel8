@@ -35,7 +35,11 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('admin', function(User $user) {
 
             // Gerbangnya hanya bisa diakses oleh user dengan username didaen
-            return $user->username === 'didaen';
+            // return $user->username === 'didaen';
+
+            // Karena sudah membuat field is_admin pada tabel users, pengecekan admin atau bukan melalui tabel ini
+            // Nilai defaultnya 0, admin 1
+            return $user->is_admin;
         });
     }
 }
