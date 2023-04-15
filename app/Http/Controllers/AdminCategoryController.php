@@ -15,20 +15,14 @@ class AdminCategoryController extends Controller
     public function index()
     {
         // Melakukan pengecekan secara manual apakah yang login merupakan admin atau bukan
-        // Jika yang membuka view adalah guest
-        if(auth()->guest()) {
+        // Jika yang membuka view adalah guest ATAU yang mengakses bukan didaen
+        if(auth()->guest() || auth()->user()->username !== 'didaen') {
 
             // Gagalkan sambil tampilkan pesan 403 Forbidden
             abort(403);
         }
 
-        // Jika yang mengakses bukan didaen
-        if(auth()->user()->username !== 'didaen') {
-
-            // Gagaglkan
-            abort(403);
-        }
-
+        // Buka view dashboard/categories/index.blade.php dan kirimkan data
         return view('dashboard.categories.index', [
             'categories' => Category::all()
         ]);
