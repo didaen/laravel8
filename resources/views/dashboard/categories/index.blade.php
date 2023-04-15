@@ -10,7 +10,7 @@
     
     {{-- AWAL PESAN FLASH --}}
     @if (session()->has('success'))
-    <div class="alert alert-success col-lg-8" role="alert">
+    <div class="alert alert-success col-lg-6" role="alert">
         {{ session('success') }}
     </div>
     @endif
