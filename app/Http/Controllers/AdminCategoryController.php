@@ -25,7 +25,7 @@ class AdminCategoryController extends Controller
         
         // Pengecekan otorisasi menggunakan GATE
         // Jadi dia hanya bisa mengakses next line kalo dia sudah login dan dia admin
-        $this->authorize('admin');
+        // $this->authorize('admin');
 
         // Buka view dashboard/categories/index.blade.php dan kirimkan data
         return view('dashboard.categories.index', [
