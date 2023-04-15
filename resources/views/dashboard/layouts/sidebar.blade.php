@@ -22,7 +22,7 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
-                    <span data-feather="file-text" class="align-text-bottom"></span>
+                    <span data-feather="hash" class="align-text-bottom"></span>
                     Post Categories
                 </a>
             </li>
