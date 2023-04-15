@@ -19,7 +19,7 @@ class IsAdmin
         // Melakukan pengecekan secara manual apakah yang login merupakan admin atau bukan
         // Jika yang membuka view adalah guest ATAU yang mengakses bukan didaen
         // Bisa pake auth()->check() yang jika sudah login menghasilkan TRUE, sehingga pengondisiannya menjadi !user()->check()
-        if(auth()->guest() || auth()->user()->username !== 'didaen') {
+        if(!auth()->check() || auth()->user()->username !== 'didaen') {
 
             // Gagalkan sambil tampilkan pesan 403 Forbidden
             abort(403);
